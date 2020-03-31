@@ -1,0 +1,48 @@
+<script>
+
+    var img = new Image();
+    var chars = 100050000;
+
+
+    img.onerror = function () {
+        // alert('파일없음');
+
+        randomString();
+
+
+        UrlExists();
+    }
+
+
+    img.src = 'http://static.soulworker.co.kr/upload/multimedia/637206555' + chars + '.jpg';
+
+
+
+    function randomString() {
+
+        {
+            chars += 1;
+            document.writeln(chars);
+        }
+        {
+
+
+
+
+            img.onload = function () {
+                window.open('http://static.soulworker.co.kr/upload/multimedia/637206555' + chars + '.jpg');
+                randomString();
+            }
+            img.onerror = function () {
+                randomString();
+            }
+            img.src = 'http://static.soulworker.co.kr/upload/multimedia/637206555' + chars + '.jpg';
+
+        }
+
+
+    }
+
+
+
+</script>
