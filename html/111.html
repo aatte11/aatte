@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>폼</title>
+    
+ 
+        
+    <script type="text/javascript">
+        intt();
+        //intt2();
+
+
+
+
+
+            function intt2() {
+
+                var pictureIndex = 1;
+                var baseUrl = "http://jisu0520.dothome.co.kr/html/image/";
+                var image_url = undefined;
+                var timer = setInterval(next, 5000);
+
+                var tester = new Image();
+                tester.onload = imageFound;
+                tester.onerror = imageNotFound;
+
+                function next() {
+                    image_url = baseUrl + 'Slide' + pictureIndex + '.PNG';
+                    tryLoadImage(image_url);
+                }
+
+                function tryLoadImage(url) {
+                    tester.src = url;
+                }
+
+                function imageFound() {
+                    document.getElementById("viewer").src = image_url;
+                    pictureIndex++;
+                }
+                document.write(image_url);
+
+            }
+        function intt() {
+
+            //for (var i = 0; i < 10; i++) {
+
+            var chars = "0123456789abcdefghiklmnopqrstuvwxyz";
+            var string_length = 15;
+            var trrr = 1;
+            var randomstring = '';
+            var randomstring2 = '';
+            for (var i = 0; i < string_length; i++) {
+                var rnum = Math.floor(Math.random() * chars.length);
+                randomstring += chars.substring(rnum, rnum + 1);
+                randomstring2 = "http://static.soulworker.co.kr/event/20190401_roska_schedule/images/" + randomstring + ".JPG";
+            }
+            //  document.write(randomstring2);
+            var img = new Image();
+            img.onload = function () {
+                document.write("okokokokokokokokook " + randomstring2);
+
+            }
+
+            img.onerror = function () {
+
+                document.write("no " + randomstring2);
+                setTimeout("location.href=location.href", 0);
+            }
+            img.src = randomstring2;
+
+            // }
+
+
+
+        }
+
+
+
+    </script>
+
+
+
+
+</head>
+
+<body>
+
+        
+
+</body>
+
+</html>
